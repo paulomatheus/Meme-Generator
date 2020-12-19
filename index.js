@@ -15,21 +15,16 @@ memeRouter.applyRoutes(server);
 server.use(restify.plugins.bodyParser());
 server.use(restify.plugins.queryParser());
 
-// http:// => protocolo
-// localhost => endereço do servidor
-// :5000 => porta do servidor
-// /NP2_EC021/meme => rota (recurso)
-
 server.listen(process.env.PORTA, function () {
   console.log("Servidor rodando...");
 
   //Efetivar conexão com o BD
   mongoose.connect(DB.DB_URL, DB.DB_CONFIG, (error) => {
     if (!error) {
-      console.log("MongoDB Conectado!");
+      console.log("MongoDB rodando e operante! :) ");
     } else {
       //retorna o tipo de erro
-      console.log(`Erro ao conectar no MongoDB:  ${error}`);
+      console.log(`Sem conexão com o MongoDB :( :  ${error}`);
     }
   });
 });

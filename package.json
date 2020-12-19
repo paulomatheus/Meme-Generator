@@ -1,23 +1,22 @@
 {
-    "name": "np2_ec021",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "nodemon index.js"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "axios": "^0.21.0",
-      "dotenv": "^8.2.0",
-      "mongoose": "^5.11.7",
-      "restify": "^8.5.1",
-      "restify-router": "^0.6.2"
-    },
-    "devDependencies": {
-      "nodemon": "^2.0.6"
-    }
+  "name": "meme-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.11.7",
+    "restify": "^8.5.1",
+    "restify-router": "^0.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
-  
+}

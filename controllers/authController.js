@@ -4,9 +4,8 @@ const authAxios = axios.create({
   baseURL: process.env.AUTH_URL,
 });
 
-//Autenticação
+//Autenticação do usuário
 module.exports = {
-  //validação dos dados do usuário, tendo como resposta um json confirmando ou retornando um erro!
   login: (req, res) => {
     let { user, pass } = req.body;
 
@@ -16,20 +15,20 @@ module.exports = {
       user,
       token,
     };
-
+    //Retorna um erro caso nao encontre o usuario
     if (!user || !pass) {
-      return res.json(401, { msg: `Usuário ou senha inválidos.` }); // Unauthorized
+      return res.json(401, { msg: `Nao foi possivel localizar o usuario. Verifique a senha e/ou e-mail.` });
     }
 
     return res.json(200, resposta);
   },
 
-  //validação do token que retorna uma mensagem em json caso tenha erro no mesmo!
+  //Autenticacao do Token
   validateToken: (req, res, next) => {
     let token = req.headers.token;
-
+    //Retorna um erro caso nao encontre o usuario
     if (!token) {
-      return res.json(403, { msg: `Token inválido.` }); // Forbidden
+      return res.json(403, { msg: `Nao foi possivel encontrar o token. Verifique e tente novamente.` }); // Forbidden
     }
 
     next();
